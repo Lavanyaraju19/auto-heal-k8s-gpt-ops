@@ -13,7 +13,7 @@ It will allow you to create a custom resource that defines the behaviour and sco
 
 <img src="images/demo2.gif" width="600px;"/>
 
-## Installation
+## Installation 
 
 ```
 helm repo add k8sgpt https://charts.k8sgpt.ai/
