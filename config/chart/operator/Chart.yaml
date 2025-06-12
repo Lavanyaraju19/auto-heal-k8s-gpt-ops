@@ -1,0 +1,23 @@
+apiVersion: v2
+name: k8sgpt-operator
+description: Automatic SRE Superpowers within your Kubernetes cluster
+maintainers:
+  - name: The K8sGPT Authors
+    email: noreply@k8sgpt.ai
+    url: https://github.com/k8sgpt-ai/community
+annotations:
+  artifacthub.io/links: |
+    - name: support
+      url: https://github.com/k8sgpt-ai/k8sgpt-operator/issues/new
+    - name: community
+      url: https://github.com/k8sgpt-ai/community
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/categories: monitoring-logging
+type: application
+version: 0.2.20
+appVersion: 0.0.26
+dependencies:
+  - name: interplex
+    version: 1.0.0
+    repository: https://charts.k8sgpt.ai/
+    condition: interplex.enabled

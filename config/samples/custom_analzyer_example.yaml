@@ -1,0 +1,38 @@
+apiVersion: core.k8sgpt.ai/v1alpha1
+kind: K8sGPT
+metadata:
+  name: k8sgpt-sample
+  namespace: k8sgpt-operator-system
+spec:
+  ai:
+    model: gpt-3.5-turbo
+    backend: openai
+    enabled: true
+    secret:
+      name: k8sgpt-sample-secret
+      key: openai-api-key
+  noCache: false
+  version: v0.3.39
+  customAnalyzers:
+    - name: Foo
+      connection:
+        url: localhost
+        port: 8085
+  # remoteCache:
+  #   credentials:
+  #     name: k8sgpt-sample-cache-secret
+  #   s3:
+  #     bucketName: foo
+  #     region: us-west-1
+  #  integrations:
+  #    trivy:
+  #      enabled: false
+  #      namespace: trivy-system
+  #      skipInstall: false
+  #  resources:
+  #    limits:
+  #      cpu: 1
+  #      memory: 512Mi
+  #    requests:
+  #      cpu: 200m
+  #      memory: 156Mi
